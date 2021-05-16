@@ -7,8 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at', 'created_at'];
     protected $fillable = [
-        'title',
-        'path',
+        'user_id',
+        'image_name',
+        'image_path',
     ];
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
 }
+
+
