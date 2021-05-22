@@ -14,7 +14,10 @@ class UserController extends Controller
         return view('edit');
     }
     
-
+    public function edit3(Request $request)
+    {
+        return view('users/edit');
+    }
     public function update(Request $request)
     {   
         // 投稿内容の受け取って変数に入れる
@@ -25,7 +28,7 @@ class UserController extends Controller
             // 画像のアップロード
             $path = $request->file('image')->store('public/avatar');
             $image_path = basename($path);
-        
+            $home_path = basename($path);
             // // DBにアップロードする
             $image_path2 = new Image();
             $image_path2->fill([
@@ -41,6 +44,8 @@ class UserController extends Controller
         return redirect("/users/edit")->with([
                 "message" => "投稿に成功しました。",
                 "name" => $name,
-                "comment"  => $comment]);
+                "comment"  => $comment,
+                "image"  => basename($path)]);
+
     }
 }

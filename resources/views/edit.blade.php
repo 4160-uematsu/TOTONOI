@@ -10,6 +10,11 @@
 <br><hr>
 @endif
 
+@if(Session::has('image'))
+    <div>
+    <img src="{{ asset("/storage/avatar") }}/{{ session('image') }}" alt=""> 
+    </div>
+@endif
 
 <!-- 投稿画面 -->
 <form action="/users/edit" method="post" enctype='multipart/form-data'> 

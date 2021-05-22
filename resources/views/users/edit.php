@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <p>kaka</p>
+    <img src="{{ asset("/storage/avatar/0bKh24fitFmAuVY4fqBiQIykDjUElrPQ4ofDKM4M.png") }}" alt="">
     <img src="{{ asset("/storage/avatar/$filename") }}" alt="">
+
+    <p>kaka</p>
 </body>
 </html>
