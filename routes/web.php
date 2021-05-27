@@ -30,8 +30,8 @@ Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallb
 Route::get('/users/edit', 'UserController@edit2');
 Route::post('/users/edit', 'UserController@update');
 
-Route::get('/users/edit2', 'UserController@edit3');
+Route::get('/my_page', 'My_pageController@edit3');
 
-
+Route::get('/my_page2', 'My_pageController@index');
 
 

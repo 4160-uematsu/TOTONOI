@@ -16,6 +16,17 @@
     </div>
 @endif
 
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <!-- 投稿画面 -->
 <form action="/users/edit" method="post" enctype='multipart/form-data'> 
     {{ csrf_field() }}
@@ -23,7 +34,7 @@
     <input type="text" name="name"><br><br>
     <textarea name="comment" rows="8" cols="40">
     </textarea><br><br>
-    <!-- 画像アップロード -->
+    <!-- 画像内容 -->
     <div>
         <input type="hidden" name="id" value="">
     </div>
