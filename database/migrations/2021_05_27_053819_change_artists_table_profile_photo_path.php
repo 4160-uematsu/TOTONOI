@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCommentsToImagesTable extends Migration
+class ChangeArtistsTableProfilePhotoPath extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddCommentsToImagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('images', function (Blueprint $table) {
-            $table->text('comments');
-
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('profile_photo_path')->default('/def_img/noimage.png');
         });
     }
 
@@ -26,8 +25,8 @@ class AddCommentsToImagesTable extends Migration
      */
     public function down()
     {
-        Schema::table('images', function (Blueprint $table) {
-            $table->dropColumn('comments');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('profile_photo_path');
         });
     }
 }

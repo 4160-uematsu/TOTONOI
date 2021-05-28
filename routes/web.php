@@ -33,5 +33,4 @@ Route::post('/users/edit', 'UserController@update');
 Route::get('/my_page', 'My_pageController@edit3');
 
 Route::get('/my_page2', 'My_pageController@index');
-
-
+Route::post('/my_page2', 'My_pageController@my_page_update');

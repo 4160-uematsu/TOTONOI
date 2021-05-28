@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Image;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -14,7 +15,6 @@ class UserController extends Controller
         return view('edit');
     }
     
-
     public function update(Request $request)
     {   
         $validated = $request->validate([
@@ -31,8 +31,9 @@ class UserController extends Controller
             $home_path = basename($path);
             // // DBにアップロードする
             $image_path2 = new Image();
+            $id = Auth::id();
             $image_path2->fill([
-                'user_id'=>1,
+                'user_id'=>$id ,
                 'image_name'=>$name,
                 'comments'=>$comment,	
                 'image_path'=>$image_path,
@@ -43,7 +44,7 @@ class UserController extends Controller
             // // DBにアップロードする
             $image_path3 = new Image();
             $image_path3->fill([
-                'user_id'=>1,
+                'user_id'=>$id ,
                 'image_name'=>$name,	
                 'comments'=>$comment,	
                 'image_path'=>'',
