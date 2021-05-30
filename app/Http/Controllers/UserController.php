@@ -31,9 +31,8 @@ class UserController extends Controller
             $home_path = basename($path);
             // // DBにアップロードする
             $image_path2 = new Image();
-            $id = Auth::id();
             $image_path2->fill([
-                'user_id'=>$id ,
+                'user_id'=>1 ,
                 'image_name'=>$name,
                 'comments'=>$comment,	
                 'image_path'=>$image_path,
@@ -44,7 +43,7 @@ class UserController extends Controller
             // // DBにアップロードする
             $image_path3 = new Image();
             $image_path3->fill([
-                'user_id'=>$id ,
+                'user_id'=>1,
                 'image_name'=>$name,	
                 'comments'=>$comment,	
                 'image_path'=>'',

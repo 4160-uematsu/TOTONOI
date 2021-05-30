@@ -12,8 +12,8 @@ class Image extends Model
     protected $fillable = [
         'user_id',
         'image_name',
-        'comments',
         'image_path',
+        'comments',
     ];
     public function user()
     {
