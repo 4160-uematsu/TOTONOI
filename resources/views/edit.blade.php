@@ -16,7 +16,6 @@
     </div>
 @endif
 
-
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -43,5 +42,6 @@
     </div>
     <input type="submit" value="投稿する">
 </form>
+
 </body>
 </html>

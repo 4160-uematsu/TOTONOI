@@ -22,6 +22,7 @@ class UserController extends Controller
             'comment' => 'required',
         ]);
         // 投稿内容の受け取って変数に入れる
+        $id = Auth::id();
         $name = $request->input('name');
         $comment = $request->input('comment');
         if($request->hasFile('image')) {
@@ -32,7 +33,7 @@ class UserController extends Controller
             // // DBにアップロードする
             $image_path2 = new Image();
             $image_path2->fill([
-                'user_id'=>1 ,
+                'user_id'=>$id,
                 'image_name'=>$name,
                 'comments'=>$comment,	
                 'image_path'=>$image_path,
@@ -43,7 +44,7 @@ class UserController extends Controller
             // // DBにアップロードする
             $image_path3 = new Image();
             $image_path3->fill([
-                'user_id'=>1,
+                'user_id'=>$id,
                 'image_name'=>$name,	
                 'comments'=>$comment,	
                 'image_path'=>'',

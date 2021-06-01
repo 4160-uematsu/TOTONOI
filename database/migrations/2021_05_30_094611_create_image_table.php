@@ -19,7 +19,7 @@ class CreateImageTable extends Migration
         // });
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->text('image_name');
             $table->text('image_path');
             $table->foreign('user_id')->references('id')->on('users');
