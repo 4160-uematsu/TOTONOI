@@ -30,8 +30,8 @@ class GoogleController extends Controller
     public function handleGoogleCallback()
     {
         try {
-
-            $user = Socialite::driver('google')->user();
+            // statelessはセッションを保持しない
+            $user = Socialite::driver('google')->stateless()->user();
 
             $finduser = User::where('google_id', $user->id)->first();
 

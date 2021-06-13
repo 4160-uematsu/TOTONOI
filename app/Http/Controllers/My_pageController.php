@@ -28,8 +28,11 @@ class My_pageController extends Controller
             // 画像に表示させる
             return redirect("/my_page2")->with([
                 "message" => "マイページ画像を変更しました。",
-                "top_image_pass" => $top_image_pass2 
+                "top_image_pass" => $top_image_pass2,
             ]);
+        }
+        else{
+            return redirect("/my_page2");
         }
     }
 }

@@ -1,33 +1,55 @@
+@extends('layouts.app')
+
+@section('my_page')
+<section class="text-gray-600 body-font">
 @if (Session::has('message'))
-    <p>{{ session('message') }}</p>
+    <p class="text-center ">{{ session('message') }}</p>
 @endif
+  <div class="mt-24 container mx-auto flex px-5 py-24 md:flex-row flex-col items-center bg-white border-4 border-double border-indigo-500">
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        @if (Session::has('top_image_pass'))
+            <img class="object-center transform scale-90" src="{{ asset('/storage/top_file') }}/{{ session('top_image_pass') }}" alt=""> 
+            
+        @elseif ($my_user->profile_photo_path == "/def_img/noimage.png")
+            <p><img class="object-center transform scale-90" src="{{ $my_user->profile_photo_path }}" alt=""> </p>
 
-<p>名前:{{ $my_user->name }}</p>
-<p>メールアドレス:{{ $my_user->email }}</p>
-
-@if (Session::has('top_image_pass'))
-    <img src="{{ asset('/storage/top_file') }}/{{ session('top_image_pass') }}" alt=""> 
-
-@elseif ($my_user->profile_photo_path == "/def_img/noimage.png")
-    <p><img src="{{ $my_user->profile_photo_path }}" alt=""> </p>
-
-@else
-    <p><img src="{{ asset('/storage/top_file') }}/{{ $my_user->profile_photo_path }}" alt=""> </p>
-
-@endif
-
-<!DOCTYPE html>
-<html lang="ja">
-<body>
-<!-- マイページ変更画面 -->
-<form action="/my_page2" method="post" enctype='multipart/form-data'> 
-    {{ csrf_field() }}
-    <!-- 画像内容 -->
-    <div>
-        <input type="file" name="top_image">
+        @else
+            <p><img class="object-center transform scale-90" src="{{ asset('/storage/top_file') }}/{{ $my_user->profile_photo_path }}" alt=""> </p>
+        @endif
     </div>
-    <input type="submit" value="変更する">
-</form>
+    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center ">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+        <font style="vertical-align: inherit;"></font>
+        <br class="hidden lg:inline-block">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">TOTONOI</font>
+          <font style="vertical-align: inherit;">マイページ</font>
+        </font>
+      </h1>
+      <p class="mb-8 leading-relaxed">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">名前：{{ $my_user->name }}</font><br>
+          <font style="vertical-align: inherit;">メールアドレス：{{ $my_user->email }}</font>
+        </font>
+      </p>
+        <form action="/my_page2" method="post" enctype='multipart/form-data'> 
+                {{ csrf_field() }}
+            <div class="flex justify-center">
+                <div class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg originalbtn">
+                    <input type="file" id="selectFileSample1" name="top_image">ファイル選択
+                </div>
+                <div class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg originalbtn">
+                    <input type="submit" value="">変更する
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</section>
+@endsection
 
-</body>
-</html>
+    
+        
+
+    
+
