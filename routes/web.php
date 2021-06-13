@@ -1,4 +1,6 @@
+
 <?php
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +19,7 @@ use App\Http\Controllers\GoogleController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+    
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
@@ -25,3 +27,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
+Route::get('/users/edit', 'UserController@edit2');
+Route::post('/users/edit', 'UserController@update');
+
+Route::get('/my_page', 'My_pageController@edit3');
+
+Route::get('/my_page2', 'My_pageController@index');
+Route::post('/my_page2', 'My_pageController@my_page_update');
