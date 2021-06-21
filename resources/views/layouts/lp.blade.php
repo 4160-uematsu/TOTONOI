@@ -31,33 +31,18 @@
                     TOTONOI
                 </div>
                 <div class="flex items-center">
-                    <nav class="text-white uppercase text-lg lg:flex items-center hidden">
+                    <nav class="text-white uppercase text-lg lg:flex items-center hidden">    
                         @if (Route::has('login'))
                             @auth
-                            <a href="{{ url('/my_page2') }}" class="py-2 px-6 flex">マイページ</a>
-                            @else
-                            <a href="{{ route('login') }}" class="py-2 px-6 flex">ログイン</a>
-                                @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 py-2 px-6 flex">アカウント作成</a>
-                                @endif
+                                <a href="{{ url('/my_page2') }}" class="py-2 px-6 flex">マイページ</a>
                             @endauth
                         @endif
                     </nav>
-                    <button class="lg:hidden flex flex-col ml-4">
-                        <span class="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                        </span>
-                        <span class="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                        </span>
-                        <span class="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                        </span>
-                    </button>
                 </div>
             </div>
         </header>
-        @yield('my_page')
-        @yield('edit')
             <!-- @livewire('navigation-menu')変えました-->
-            
+            @yield('welcome')
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">

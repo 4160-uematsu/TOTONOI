@@ -7,8 +7,10 @@
 @endif
   <div class="mt-24 container mx-auto flex px-5 py-24 md:flex-row flex-col items-center bg-white border-4 border-double border-indigo-500">
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+    
+
         @if (Session::has('top_image_pass'))
-            <img class="object-center transform scale-90" src="{{ asset('/storage/top_file') }}/{{ session('top_image_pass') }}" alt=""> 
+            <img class="object-center transform scale-90 "mx-auto object-cover rounded-full h-20 w-20 "" src="{{ asset('/storage/top_file') }}/{{ session('top_image_pass') }}" alt=""> 
             
         @elseif ($my_user->profile_photo_path == "/def_img/noimage.png")
             <p><img class="object-center transform scale-90" src="{{ $my_user->profile_photo_path }}" alt=""> </p>
@@ -17,7 +19,7 @@
             <p><img class="object-center transform scale-90" src="{{ asset('/storage/top_file') }}/{{ $my_user->profile_photo_path }}" alt=""> </p>
         @endif
     </div>
-    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center ">
+    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
         <font style="vertical-align: inherit;"></font>
         <br class="hidden lg:inline-block">
