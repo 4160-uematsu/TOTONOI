@@ -203,9 +203,9 @@ Correct the inability to style clickable types in iOS and Safari.
 */
 
 button,
+[type='submit'],
 [type='button'],
-[type='reset'],
-[type='submit'] {
+[type='reset'] {
   -webkit-appearance: button;
 }
 
@@ -191953,7 +191953,7 @@ select {
   .\32xl\:col-start-3 {
     grid-column-start: 3;
   }
-
+Z
   .\32xl\:col-start-4 {
     grid-column-start: 4;
   }
@@ -195822,5 +195822,45 @@ select {
   .\32xl\:backdrop-sepia {
     --tw-backdrop-sepia: sepia(100%);
   }
+
+  .btn{
+    font-weight: 600;
+    color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.25rem;
+  }
 }
 
+/* 追加コーディング */
+
+.font-sans antialiased h1 {
+  padding: 20px;
+  background-color: cornflowerblue;
+}
+
+.originalbtn {
+    /* border: 3px solid; */
+    display: inline-block;
+    padding: 2px 1em;
+    position: relative;
+}
+.originalbtn input[type="file"] {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.originalbtn input[type="submit"] {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
