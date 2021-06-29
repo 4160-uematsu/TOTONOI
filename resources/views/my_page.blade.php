@@ -1,3 +1,5 @@
+
+
 @extends('layouts.app')
 
 @section('my_page')
@@ -48,6 +50,12 @@
     </div>
   </div>
 </section>
+あなたの最新のコメント 
+<p>〇〇温泉</p>
+<p>title</p>
+{{ $my_history->title }}
+<p>body</p>
+{{ $my_history->body }}
 @endsection
 
     

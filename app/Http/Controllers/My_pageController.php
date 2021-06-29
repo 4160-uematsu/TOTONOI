@@ -13,7 +13,10 @@ class My_pageController extends Controller
     {
         $id = Auth::id();
         $user = DB::table('users')->find($id);
-        return view('my_page', ['my_user' => $user]);
+        $user_history = DB::table('company')->find($id);
+        return view('my_page',[
+            "my_user" => $user,
+            "my_history" => $user_history]);
     }
     public function my_page_update(Request $request)
     {
