@@ -42,3 +42,6 @@ Route::post('/my_page2', 'My_pageController@my_page_update');
 Route::get('/log', "CompanyController@index");
 Route::post('/create', "CompanyController@create");
 
+Route::get('/search', "HomeController@index");
+Route::post('/answer', "HomeController@redirectIndex");
+
