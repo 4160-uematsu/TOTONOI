@@ -15,6 +15,7 @@
         }
     @endphp
     <div class="entry">
+        <h5>{{ $item->author }}</h5>
         <h5>{{ $item->title }}</h5>
         <div>
             {!! nl2br(e($item->body)) !!}
