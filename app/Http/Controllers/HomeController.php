@@ -27,13 +27,16 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $q = $request->input('q'); //フォームの入力値を取得
-
+        $radio = $request->input('equipment');
         //検索キーワードが空の場合
         if (empty($q)) {
             $users = User::paginate(0);  //全ユーザーを10件/ページで表示
 
         //検索キーワードが入っている場合
         } else {
+
+            var_dump($radio);
+            exit;
             $_q = str_replace(' ', ' ', $q);  //全角スペースを半角に変換
             $_q = preg_replace('/\s(?=\s)/', '', $_q); //連続する半角スペースは削除
             $_q = trim($_q); //文字列の先頭と末尾にあるホワイトスペースを削除
@@ -54,3 +57,4 @@ class HomeController extends Controller
         return view('home', compact('users', 'q'));
     }
 }
+?>

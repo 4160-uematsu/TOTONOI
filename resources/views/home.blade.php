@@ -6,6 +6,8 @@
             <form method="get" action="/search">
                 <div class="form-row">
                     <div class="col">
+                        <input type="checkbox"  name="equipment" value="1">サウナ
+                        <input type="checkbox"  name="equipment" value="2">露天風呂
                         <input id="q" type="text" class="form-control" name="q" value="{{ $q }}" autocomplete="q" autofocus placeholder="{{ __('Name or Email') }}">
                     </div>
                     <div class="col-auto">
