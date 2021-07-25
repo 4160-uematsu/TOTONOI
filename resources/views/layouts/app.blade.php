@@ -56,6 +56,7 @@
         </header>
         @yield('my_page')
         @yield('edit')
+        @yield('company log')
             <!-- @livewire('navigation-menu')変えました-->
             
             <!-- Page Heading -->
