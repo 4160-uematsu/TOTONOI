@@ -7,7 +7,7 @@
     <title>ユーザ登録フォーム</title>
 </head>
 <body>
-    <form name="registform" action="/register" method="post" id="registform">
+    <form name="registform" action="company" method="post" id="registform">
         {{ csrf_field() }}
         <dl>
             <dt>名前:</dt>

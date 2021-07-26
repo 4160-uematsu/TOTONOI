@@ -28,6 +28,10 @@ Route::get('/dashboard',function(){
     return redirect()->intended('my_page2');
 });
 
+Route::get('/home',function() {
+    return view('home');
+});
+
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
@@ -46,23 +50,19 @@ Route::get('/search', "HomeController@index");
 Route::post('/answer', "HomeController@redirectIndex");
 
 
+Route::get('/home',function() {
+    return view('company_home');
+});
+
 Route::get('/company_register',[App\Http\Controllers\RegisterController::class,'create']);
 Route::post('/company_register' ,[App\Http\Controllers\RegisterController::class,'store'])
     ->middleware('guest');
 
 
-Route::get('/company_login', [App\Http\Controllers\LoginController::class,'index'])
-    ->middleware('guest')
-    ->name('company_login');
-Route::post('/company_login',[App\Http\Controllers\LoginController::class,'authenticate'])
-    ->middleware('guest');
+Route::get('/company_login', "LoginController@index");
+Route::post('/company_login', "LoginController@authenticate");
 
-Route::get('/logout' ,[App\Http\Controllers\LoginController::class, 'logout'])
-    ->middleware('auth')
-    ->name('logout');
+Route::get('/logout' ,"LoginController@logout");
 
-Route::get('company', 'App\Http\Controllers\CompanyController@index');
-
-Route::get('/home',function() {
-    return view('home');
-});
+Route::get('/company', "CompanyController2@index");
+Route::post('/company', "CompanyController2@index");

@@ -50,6 +50,12 @@
     </div>
   </div>
 </section>
+<div class="nav-link" id="nav-bar-logoutbutton">                       
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button class="btn btn-secondary btn-sm" type="submit">Logout</button>
+        </form>
+    </div>
 あなたの最新のコメント 
 <p>〇〇温泉</p>
 <p>title</p>

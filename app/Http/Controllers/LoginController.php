@@ -24,7 +24,8 @@ class LoginController extends Controller
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
 
-                return redirect()->intended(RouteServiceProvider::HOME);
+        return view('company');
+                // return redirect()->intended(RouteServiceProvider::HOME);
             }
         }
         return back()->withErrors([
@@ -40,7 +41,8 @@ class LoginController extends Controller
 
             $request->session()->regenerateToken();
 
-            return redirect(RouteServiceProvider::HOME);
+            return redirect('/');
+            // return redirect(RouteServiceProvider::HOME);
         }
 }
 
