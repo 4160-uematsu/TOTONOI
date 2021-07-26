@@ -13,7 +13,7 @@ class My_pageController extends Controller
     {
         $id = Auth::id();
         $user = DB::table('users')->find($id);
-        $user_history = DB::table('company')->find($id);
+        $user_history = DB::table('company')->orderBy('id','desc')->first();;
         return view('my_page',[
             "my_user" => $user,
             "my_history" => $user_history]);

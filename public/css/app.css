@@ -195864,3 +195864,213 @@ Z
   top: 0;
   width: 100%;
 }
+
+.balloon3-right {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  padding: 0 5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff8e9d;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.balloon3-right:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #ff8e9d;
+  z-index: 0;
+}
+
+.balloon3-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 0 5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffcc75;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.balloon3-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #ffcc75;
+  z-index: 0;
+}
+
+.balloon2-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.balloon2-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #FFF;
+  z-index: 2;
+}
+
+.balloon2-left:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+
+.balloon2-left p {
+  margin: 0;
+  padding: 0;
+}
+
+.balloon2-top {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border: solid 3px rgb(173, 219, 238);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.balloon2-top:before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 7%;
+  /* margin-left: -30px; */
+  border: 12px solid transparent;
+  border-bottom: 12px solid rgb(173, 219, 238);
+  z-index: 2;
+}
+
+.balloon2-top:after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 7%;
+  /* margin-left: -30px; */
+  border: 14px solid transparent;
+  border-bottom: 14px solid rgb(173, 219, 238);
+  z-index: 1;
+}
+
+.balloon2-top p {
+  margin: 0;
+  padding: 0;
+}
+
+.balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 15px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+
+.balloon1-left p {
+  margin: 0;
+  padding: 0;
+}
+
+.midashi {
+  background: linear-gradient(transparent 70%, #CCCCFF 70%);
+  width: 100px;
+}
+
+.title:first-letter {
+  color: #9beede;
+}
+
+.LP{
+  color: #9beede;
+}
+
+.css-selector {
+    background: linear-gradient(270deg, #d8abe6, #9beede);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.nowrap td:nth-child(1),.nowrap td:nth-child(2){
+  white-space: nowrap;
+}

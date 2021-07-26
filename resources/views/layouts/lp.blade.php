@@ -27,7 +27,7 @@
     <body class="font-sans antialiased bg-gray-200">
         <header class="h-24 sm:h-32 flex items-center z-30 w-full bg-indigo-500 p-5">
             <div class="container mx-auto px-6 flex items-center justify-between">
-                <div class="text-4xl text-white font-bold">
+                <div class="text-6xl text-white font-bold title">
                     TOTONOI
                 </div>
                 <div class="flex items-center">

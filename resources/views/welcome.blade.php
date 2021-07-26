@@ -1,10 +1,10 @@
 @extends('layouts.lp')
 @section('welcome')
-<main class="pt-10 dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
-    <div class="bg-white dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
+<main class="pt-10 css-selector relative overflow-hidden h-screen">
+    <div class="flex relative z-20 items-center overflow-hidden">
         <div class="container mx-auto px-6 flex relative py-16">
             <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
-                <h1 class="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none dark:text-white text-gray-800">
+                <h1 class="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none text-gray-600">
                     あなたの日常に
                     <span class="text-5xl sm:text-7xl">
                         ひとときの安らぎを
@@ -32,8 +32,4 @@
         </div>
     </div>
 </main>
-@endsection                 
-                
-
-                            
-                            
+@endsection
