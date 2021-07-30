@@ -37,7 +37,7 @@ class RegisterController extends Controller
         $company_user->save();
 
 
-        return view('/company_home', compact('company_user'));
+        return view('company', compact('company_user'));
 
         // $array_1=(array)$company_user;  
         // $company_user->fill($array_1)->save();
