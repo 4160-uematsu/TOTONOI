@@ -7,8 +7,9 @@
     <title>ユーザ登録フォーム</title>
 </head>
 <body>
-    <form name="registform" action="company" method="post" id="registform">
-        {{ csrf_field() }}
+    <form action="/company_store" method="post" enctype="multipart/form-data">
+    @csrf
+
         <dl>
             <dt>名前:</dt>
             <dd><input type="text" name="name" size="30">
@@ -29,7 +30,7 @@
                         <dd><input type="password" name="password_confirmation" size="30">
                             <span>{{ $errors->first('password_confirmation') }}</span></dd>
                     <dl>
-                <button type="submit" name="action" value='send'>送信</button>
+                <button type="submit"  value=''>送信</button>
     </form>
 
 </body>

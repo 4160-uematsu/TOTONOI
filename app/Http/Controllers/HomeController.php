@@ -35,8 +35,6 @@ class HomeController extends Controller
         //検索キーワードが入っている場合
         } else {
 
-            var_dump($radio);
-            exit;
             $_q = str_replace(' ', ' ', $q);  //全角スペースを半角に変換
             $_q = preg_replace('/\s(?=\s)/', '', $_q); //連続する半角スペースは削除
             $_q = trim($_q); //文字列の先頭と末尾にあるホワイトスペースを削除

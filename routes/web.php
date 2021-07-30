@@ -54,9 +54,8 @@ Route::get('/home',function() {
     return view('company_home');
 });
 
-Route::get('/company_register',[App\Http\Controllers\RegisterController::class,'create']);
-Route::post('/company_register' ,[App\Http\Controllers\RegisterController::class,'store'])
-    ->middleware('guest');
+Route::get('/company_register', "RegisterController@create");
+Route::post('/company_store', "RegisterController@store");
 
 
 Route::get('/company_login', "LoginController@index");

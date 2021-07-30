@@ -7,6 +7,6 @@
     <title>登録完了画面</title>
 </head>
 <body>
-    {{ $user->name }}さんを登録しました。
+    {{ $company_user->name }}さんを登録しました。
 </body>
 </html></html>
