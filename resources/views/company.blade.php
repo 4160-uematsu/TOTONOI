@@ -1,20 +1,57 @@
-<!-- 投稿フォーム -->
 @extends('layouts.app')
 
-@section('company log')
-        @include("/Bulletin_board/form")
-        <div class="mt-10 w-4/6 text-white font-semibold text-2xl bg-indigo-500 py-2 px-5 mx-auto flex md:flex-row flex-col">投稿一覧</div>
+@section('company_register')
+    @include("/Bulletin_board/form")
+    <h2>銭湯の人の入力</h2>
+    <form action="company" method="POST" name="hottab">
+        <br>
+        店の写真:
+        <input type="file"
+            id="avatar" name="cphoto"
+            accept="image/png, image/jpeg">
+        <br>
+        銭湯名:
+        <input name="cbath">
+        <br>
+        営業時間:
+        <input name="ctime">
+        <br>
+        宣伝:
+        <input name="cbody">
+        <br>
+        <input type="checkbox" name="riyu" value="1" checked="checked">露天風呂
+        <input type="checkbox" name="riyu" value="2">サウナ
+        <input type="checkbox" name="riyu" value="3">電気風呂
+        </p>
+        <br>
+        アクセス:
+        <textarea name="title" rows="4" cols="40" name='caccess'></textarea>
+            <br>
+            住所:
+            <textarea name="title" rows="4" cols="40" name='caddress'></textarea>
+            <br>
 
-        @php
-        $i = 0;
-        @endphp
+        <div class="box13">
+            <button class="btn btn-success">
+            <p>提出</p>
+        </button>
+        </div>
 
-        @foreach ($item_list as $item)
-        @php
-            if ($i >= 3){
-            break;
-            }
-        @endphp
+    </form>
+
+
+<div class="mt-10 w-4/6 text-white font-semibold text-2xl bg-indigo-500 py-2 px-5 mx-auto flex md:flex-row flex-col">投稿一覧</div>
+
+    @php
+    $i = 0;
+    @endphp
+
+    @foreach ($item_list as $item)
+    @php
+        if ($i >= 3){
+        break;
+        }
+    @endphp
         <!-- <div class="entry"> -->
 
         <div class="md:flex-row flex-col items-ceter mx-auto">
@@ -47,5 +84,4 @@
 @if(count($item_list) < 1)
 <p>投稿がありません</p>
 @endif
-
 @endsection

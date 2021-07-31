@@ -28,6 +28,10 @@ Route::get('/dashboard',function(){
     return redirect()->intended('my_page2');
 });
 
+Route::get('/home',function() {
+    return view('home');
+});
+
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
@@ -42,3 +46,22 @@ Route::post('/my_page2', 'My_pageController@my_page_update');
 Route::get('/log', "CompanyController@index");
 Route::post('/create', "CompanyController@create");
 
+Route::get('/search', "HomeController@index");
+Route::post('/answer', "HomeController@redirectIndex");
+
+
+Route::get('/home',function() {
+    return view('company_home');
+});
+
+Route::get('/company_register', "RegisterController@create");
+Route::post('/company_store', "RegisterController@store");
+
+
+Route::get('/company_login', "LoginController@index");
+Route::post('/company_login', "LoginController@authenticate");
+
+Route::get('/logout' ,"LoginController@logout");
+
+Route::get('/company', "CompanyController2@index");
+Route::post('/company', "CompanyController2@index");

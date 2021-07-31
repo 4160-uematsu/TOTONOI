@@ -27,7 +27,7 @@
     <body class="font-sans antialiased bg-gray-200">
         <header class="h-24 sm:h-32 flex items-center z-30 w-full bg-indigo-500 p-5">
             <div class="container mx-auto px-6 flex items-center justify-between">
-                <div class="text-4xl text-white font-bold">
+                <div class="text-6xl text-white font-bold title">
                     TOTONOI
                 </div>
                 <div class="flex items-center">
@@ -35,11 +35,13 @@
                         @if (Route::has('login'))
                             @auth
                             <a href="{{ url('/my_page2') }}" class="py-2 px-6 flex">マイページ</a>
+                            <a href="{{ route('logout') }}">ログアウト</a>
+                            
                             @else
                             <a href="{{ route('login') }}" class="py-2 px-6 flex">ログイン</a>
                                 @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="ml-4 py-2 px-6 flex">アカウント作成</a>
-                                @endif
+                            @endif
                             @endauth
                         @endif
                     </nav>
@@ -56,6 +58,11 @@
         </header>
         @yield('my_page')
         @yield('edit')
+        @yield('company log')
+
+        @yield('company_login')
+        @yield('company_register')
+        @yield('company_login2')
             <!-- @livewire('navigation-menu')変えました-->
             
             <!-- Page Heading -->
