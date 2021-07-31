@@ -53,7 +53,7 @@
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 divide-y divide-light-blue-400"> 
           <div class="rounded-lg bg-white text-2xl">
            <p class="midashi">銭湯名</p>
-           <p class="balloon2-top text-xl">〇〇温泉</p>
+           <p class="balloon2-top text-xl">〇〇温泉</p
             <p class="midashi">Title</p>
             <p class="balloon2-top text-xl">{{ $my_history->title }}</p>
             <p class="midashi">Comment</p>

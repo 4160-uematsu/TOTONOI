@@ -59,6 +59,7 @@
         @yield('my_page')
         @yield('edit')
         @yield('company log')
+
         @yield('company_login')
         @yield('company_register')
         @yield('company_login2')
