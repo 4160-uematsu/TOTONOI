@@ -2,8 +2,6 @@
 @extends('layouts.app')
 
 @section('company log')
-<!-- <div class="container flex flex-initial">
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 mb-10 md:mb-0 divide-y divide-light-blue-400"> -->
         @include("/Bulletin_board/form")
         <div class="mt-10 w-4/6 text-white font-semibold text-2xl bg-indigo-500 py-2 px-5 mx-auto flex md:flex-row flex-col">投稿一覧</div>
 
