@@ -6,6 +6,12 @@
 			<input type="text" name="author" value=""/>
 		</div>
 
+
+	<div class="mt-10 text-center mx-auto text-2xl font-semibold">
+		<div>
+			<label>Name</label><br/>
+			<input type="text" name="author" value=""/>
+		</div>
 		<div>
 			<label>Title</label><br/>
 			<input type="text" name="title" value=""/>

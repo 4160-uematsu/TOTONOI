@@ -35,11 +35,13 @@
                         @if (Route::has('login'))
                             @auth
                             <a href="{{ url('/my_page2') }}" class="py-2 px-6 flex">マイページ</a>
+                            <a href="{{ route('logout') }}">ログアウト</a>
+                            
                             @else
                             <a href="{{ route('login') }}" class="py-2 px-6 flex">ログイン</a>
                                 @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="ml-4 py-2 px-6 flex">アカウント作成</a>
-                                @endif
+                            @endif
                             @endauth
                         @endif
                     </nav>
@@ -57,6 +59,10 @@
         @yield('my_page')
         @yield('edit')
         @yield('company log')
+
+        @yield('company_login')
+        @yield('company_register')
+        @yield('company_login2')
             <!-- @livewire('navigation-menu')変えました-->
             
             <!-- Page Heading -->
