@@ -34,35 +34,25 @@
         <h1>銭湯会社の受け取り</h1>
         <dl>
             <dt></dt>
-            <dd>{{ $cbath }}</dd>
+            <dd></dd>
         </dl>
         <dl>
-            <dt>年齢</dt>
-            <dd>{{ $cphto }}</dd>
+            <dt>営業時間</dt>
+            <dd></dd>
         </dl>
         <dl>
-            <dt>年齢</dt>
-            <dd>{{ $cbody }}</dd>
+            <dt>宣伝</dt>
+            <dd></dd>
         </dl>
         <dl>
-            <dt>年齢</dt>
-            <dd>{{ $caccess }}</dd>
-        </dl>
-        <dl>
-            <dt>年齢</dt>
-            <dd>{{ $caddress }}</dd>
+            <dt>アドレス</dt>
+            <dd></dd>
         </dl>
 
         <dl>
             <dt></dt>
             <dd>
-                @foreach ($hottab as $hottab)
-                    @if (!$hottab->hottab)
-                        {{ $hottab }},
-                    @else
-                        {{ $hottab }}
-                    @endif
-                @endforeach
+ 
             </dd>
         </dl>
     </div>

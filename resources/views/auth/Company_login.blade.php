@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ログインフォーム</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('company_login2')
+<div class="m-10 text-xl">
     <form name="loginform" action="/company_login" method="post">
     @csrf
     <dl>
@@ -14,6 +9,6 @@
             {{old('email') }}"></dd>
         <dt>パスワード:</dt><dd><input type="password" name="password" size="30"></dd>
     </dl>
-    <button type='submit' name="action" value='send'>ログイン</button>
-</body>
-</html>
+    <button type='submit' name="action" value='send' class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg originalbtn mt-5">ログイン</button>
+    </form>
+@endsection

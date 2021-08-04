@@ -63,5 +63,5 @@ Route::post('/company_login', "LoginController@authenticate");
 
 Route::get('/logout' ,"LoginController@logout");
 
-Route::get('/company', "CompanyController2@index");
-Route::post('/company', "CompanyController2@index");
+Route::get('/company_info', "CompanyController2@index");
+Route::post('/company_info', "CompanyController2@Company2");

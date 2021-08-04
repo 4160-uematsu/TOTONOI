@@ -14,7 +14,7 @@
         <p><a href="/login">ログイン</a><br><a href="/register">会員登録</a></p>
         <p><a href="/company">会社</a></p>
     @endif -->
-    {{ $company_user->name }}さん<p>
+    {{ $companyusers->name }}さん<p>
     
     
 <!--     
