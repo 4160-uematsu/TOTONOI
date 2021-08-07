@@ -8,6 +8,8 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Companyusers;
+// use App\Models\Company_info;
+use App\Models\Companyinfo;
 
 class LoginController extends Controller
 {
@@ -21,24 +23,21 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email','password');
         
-        $user = Companyusers::where('email', '=',  $credentials["email"])->first();
-        if($user === null) {
-            $response = "ログイン失敗！";
-            return view('welcome', compact('response'));
-        }else{
-            $response = "ログイン完了しました！";
-            return view('welcome', compact('response'));
-        }
+        if (Companyusers::where('email', '=',  $credentials["email"] )->exists()) {
+            if (Companyusers::where('password', '=',  $credentials["password"] )->exists()) {
+                
+                $email = $credentials["email"];
+                $info = \App\Models\Companyusers::where('email', $email)->first();
+                $id = $info['companyinfo_id']; 
+                $info = \App\Models\company_info::where('id', $id)->first();
+                // $info = \App\Models\company_info::find($id);
 
-        // if (DB::table('Companyusers')->where('email', $credentials["email"] )->exists()) {
-        //     if (DB::table('Companyusers')->where('password', $credentials["password"] )->exists()) {
-        //         $response = "ログイン完了しました！";
-        //         return view('company_home', compact('response'));
-        //     }
-        // }
-        // return back()->withErrors([
-        // 'message' => 'メールアドレスまたはパスワードが正しくありません。',
-        // ]);
+                return view('companylook', compact('info'));
+
+            }
+        }
+        $message = "メールアドレスまたはパスワードが正しくありません。";
+        return view('auth.Company_login', compact('message'));
     }
 
     public function logout(Request $request)
@@ -52,5 +51,4 @@ class LoginController extends Controller
             return redirect('/');
         }
 }
-
 ?>

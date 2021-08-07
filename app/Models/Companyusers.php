@@ -40,4 +40,10 @@ class Companyusers extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    Public function company_info()
+    {
+      // 「company_info」以外の外部キーにしたい
+    return $this->hasOne('App\Models\Company_info', 'id');
+    }
 }

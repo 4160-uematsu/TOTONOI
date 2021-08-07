@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('company_login2')
+
+@if(isset( $message ))
+<p>メールアドレスまたはパスワードが正しくありません。</p>
+@endif
+
 <div class="m-10 text-xl">
     <form name="loginform" action="/company_login" method="post">
     @csrf
