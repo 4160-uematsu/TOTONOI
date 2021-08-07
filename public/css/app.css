@@ -196074,3 +196074,21 @@ Z
 .nowrap td:nth-child(1),.nowrap td:nth-child(2){
   white-space: nowrap;
 }
+
+ul li {
+  list-style: none;
+}
+label {
+  margin-right: 10px;
+  width:100px;
+  float: left;
+}
+
+ul li {
+  list-style: none;
+  label {
+  margin-right: 10px;
+  width:100px;
+  float: left;
+}
+}
