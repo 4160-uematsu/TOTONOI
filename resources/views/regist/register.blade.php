@@ -11,7 +11,7 @@
                 <span>{{ $errors->first('company') }}</span></dd>
         <dl>
         <dl>
-            <dt>社員名</dt>
+            <dt>社名</dt>
             <dd><input type="text" name="name" size="30">
                 <span>{{ $errors->first('name') }}</span></dd>
         <dl>
