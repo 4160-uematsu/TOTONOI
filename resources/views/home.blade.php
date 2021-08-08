@@ -6,9 +6,9 @@
             <form method="get" action="/search">
                 <div class="form-row">
                     <div class="col">
-                        <input type="checkbox"  name="equipment" value="1">サウナ
-                        <input type="checkbox"  name="equipment" value="2">露天風呂
-                        <input id="q" type="text" class="form-control" name="q" value="{{ $q }}" autocomplete="q" autofocus placeholder="{{ __('Name or Email') }}">
+                        <!-- <input type="checkbox"  name="equipment" value="1">サウナ
+                        <input type="checkbox"  name="equipment" value="2">露天風呂 -->
+                        <input id="q" type="text" class="form-control" name="q" value="{{ $q }}" autocomplete="q" autofocus placeholder="{{ __('Name or address') }}">
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-primary">
@@ -29,28 +29,24 @@
             @if(!empty($users))
             {{ __('SearchResult') }} : {{ __('SearchCount', ['num' => $users->total()]) }}
             <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">{{ __('UserList') }}</div>
+                <div class="card-header">{{ __('会社リスト') }}</div>
 
                 <div class="card-body">
 
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>{{ __('ID') }}</th>
-                                <th>{{ __('Name') }}</th>
-                                <th>{{ __('E-Mail Address') }}</th>
-                                <th>{{ __('CreateDate') }}</th>
-                                <th>{{ __('UpdateDate') }}</th>
+                                <th>{{ __('name') }}</th>
+                                <th>{{ __('address') }}</th>
+                                <th>{{ __('time') }}</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at->format('Y/m/d') }}</td>
-                                <td>{{ $user->updated_at->format('Y/m/d') }}</td>
+                                <td>{{ $user->address }}</td>
+                                <td>{{ $user->time }}</td>
                             </tr>
                             @endforeach
                         </tbody>

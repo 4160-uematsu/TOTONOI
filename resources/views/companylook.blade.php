@@ -30,12 +30,6 @@
         </dl>
         <dl>
             <dd>
-                <dt>アクセス</dt>
-                <li>{{ optional($info)->title }}</li>
-            </dd>
-        </dl>
-        <dl>
-            <dd>
             <dt>住所</dt>
             <li>{{ optional($info)-> address}}</li>
             </dd>

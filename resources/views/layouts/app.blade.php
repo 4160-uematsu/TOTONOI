@@ -19,6 +19,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
         @yield('css')
 
         <!-- @livewireStyles 変えました-->
@@ -63,6 +64,7 @@
         @yield('company_login')
         @yield('company_register')
         @yield('company_login2')
+        @yield('company_info')
             <!-- @livewire('navigation-menu')変えました-->
             
             <!-- Page Heading -->

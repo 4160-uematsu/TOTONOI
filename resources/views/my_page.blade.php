@@ -5,6 +5,10 @@
 @if (Session::has('message'))
     <p class="text-center ">{{ session('message') }}</p>
 @endif
+
+<p><a href="/search">検索ページ</a><br>
+<a href="/log">登録掲示板</a></p>
+
   <div class="mt-24 container mx-auto flex px-5 py-24 md:flex-row flex-col items-center bg-white border-4 border-double border-indigo-500">
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0"> 
         @if (Session::has('top_image_pass'))
@@ -53,11 +57,15 @@
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 divide-y divide-light-blue-400"> 
           <div class="rounded-lg bg-white text-2xl">
            <p class="midashi">銭湯名</p>
-           <p class="balloon2-top text-xl">〇〇温泉</p
+           <p class="balloon2-top text-xl">温泉</p
             <p class="midashi">Title</p>
-            <p class="balloon2-top text-xl">{{ $my_history->title }}</p>
-            <p class="midashi">Comment</p>
-            <p class="balloon2-top text-xl">{{ $my_history->body }}</p>
+            @if ($my_history === null)
+                <p>最近のコメントなし</p>
+            @else 
+              <p class="balloon2-top text-xl">{{ $my_history->title }}</p>
+              <p class="midashi">Comment</p>
+              <p class="balloon2-top text-xl">{{ $my_history->body }}</p>
+            @endif
           </div>
         </div>
         <div class="lg:max-w-lg lg:w-full md:w-1/2 lg:pl-24 md:pl-16 flex-row-reverse md:items-start md:text-left">
