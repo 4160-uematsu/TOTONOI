@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Companyinfo;
+use App\Models\Company_info;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -58,5 +58,16 @@ class HomeController extends Controller
         }
         return view('home', compact('users', 'q'));
     }
+    public function search(Request $request)
+    {
+        $search_name=$request->input('name2');
+        // $search_name2=$request->input('address');
+
+        $info = \App\Models\Company_info::where('name', $search_name)->first();
+        return view('companylook', compact('info'));
+
+            
+    }
+    
 }
 ?>

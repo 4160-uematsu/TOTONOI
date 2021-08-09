@@ -29,7 +29,7 @@
             @if(!empty($users))
             {{ __('SearchResult') }} : {{ __('SearchCount', ['num' => $users->total()]) }}
             <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">{{ __('会社リスト') }}</div>
+                <!-- <div class="card-header">{{ __('会社リスト') }}</div> -->
 
                 <div class="card-body">
 
@@ -44,7 +44,9 @@
                         <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td>{{ $user->name }}</td>
+                                $name = {{ $user->name }}
+                                <!-- <td><a href="/search2/{{ $user->name }}">{{ $user->name }}</a></td> -->
+                                <td><a href="/search2?name2={{ $user->name }}&address={{ $user->address }}">{{ $user->name }}</a></td>
                                 <td>{{ $user->address }}</td>
                                 <td>{{ $user->time }}</td>
                             </tr>

@@ -48,6 +48,8 @@ Route::post('/create', "CompanyController@create");
 
 Route::get('/search', "HomeController@index");
 Route::post('/answer', "HomeController@redirectIndex");
+Route::get('/search2', "HomeController@search");
+
 
 
 Route::get('/home',function() {
