@@ -60,11 +60,24 @@ class HomeController extends Controller
     }
     public function search(Request $request)
     {
+        $view=view('companylook');
+
         $search_name=$request->input('name2');
-        // $search_name2=$request->input('address');
+        $search_name2=$request->input('address');
 
         $info = \App\Models\Company_info::where('name', $search_name)->first();
-        return view('companylook', compact('info'));
+        $info = \App\Models\Company_info::where('address', $search_name2)->first();
+        $view->with('info', $info);
+
+        // $info2 = \App\Models\company::where('companyname', $search_name)->first();
+        $info2 = \App\Models\company::where('companyname', '=',$search_name)
+        ->orderBy('id', 'desc')->get();
+        
+        $view->with('info2', $info2);
+
+        return $view;
+
+        //return view('companylook', ['info'=>$info,'info2'=>$info2 ]);
 
             
     }

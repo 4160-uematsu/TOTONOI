@@ -9,6 +9,7 @@
 <p><a href="/search">検索ページ</a><br>
 <a href="/log">登録掲示板</a></p>
 
+
   <div class="mt-24 container mx-auto flex px-5 py-24 md:flex-row flex-col items-center bg-white border-4 border-double border-indigo-500">
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0"> 
         @if (Session::has('top_image_pass'))

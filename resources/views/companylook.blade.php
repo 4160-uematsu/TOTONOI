@@ -8,6 +8,7 @@
 <body>
     
 
+<a href="/log">みんなの掲示板</a></p>
 
         <h1>銭湯会社ページ</pe-zi></h1>
         <dl>
@@ -34,5 +35,23 @@
             <li>{{ optional($info)-> address}}</li>
             </dd>
         </dl>   
-</body>
+
+        @isset ($info2)
+
+            @foreach($info2 as $row)
+                銭湯名
+                <p >{{ $row->companyname }}</p>
+                <p >Name</p>
+                <p >{{ $row->author }}</p>
+                <p >Title</p>
+                <p >{{ $row->title }}</p>
+                <p >Comment</p>
+                <p > {{ $row->body }}</p>
+            @endforeach
+
+        @endisset
+
+    </body>
 </html>
+
+

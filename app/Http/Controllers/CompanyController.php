@@ -21,13 +21,14 @@ class CompanyController extends Controller
     function create(Request $request){
         
         $id = Auth::id();
-        $input = $request->only('author', 'title', 'body', 'image');
+        $input = $request->only('companyname','author', 'title', 'body', 'image');
         if($request->hasFile('image')) {
             $path = $request->file('image')->store('public/company');
             $path2 = basename($path); 
             
             $entry = new Company();
             $entry->author_id = $id;
+            $entry->companyname = $input["companyname"];
             $entry->author = $input["author"];
             $entry->title = $input["title"];
             $entry->image_path = $path2;
@@ -40,6 +41,7 @@ class CompanyController extends Controller
         else{
             $entry = new Company();
             $entry->author_id = $id;
+            $entry->companyname = $input["companyname"];
             $entry->author = $input["author"];
             $entry->title = $input["title"];
             $entry->image_path = "";

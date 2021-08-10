@@ -47,7 +47,7 @@
                                 $name = {{ $user->name }}
                                 <!-- <td><a href="/search2/{{ $user->name }}">{{ $user->name }}</a></td> -->
                                 <td><a href="/search2?name2={{ $user->name }}&address={{ $user->address }}">{{ $user->name }}</a></td>
-                                <td>{{ $user->address }}</td>
+                                <td><a href="/search2?name2={{ $user->name }}&address={{ $user->address }}">{{ $user->address }}</a></td>
                                 <td>{{ $user->time }}</td>
                             </tr>
                             @endforeach

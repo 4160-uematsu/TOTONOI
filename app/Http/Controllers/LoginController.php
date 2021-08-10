@@ -26,13 +26,23 @@ class LoginController extends Controller
         if (Companyusers::where('email', '=',  $credentials["email"] )->exists()) {
             if (Companyusers::where('password', '=',  $credentials["password"] )->exists()) {
                 
+                $view=view('companylook');
+                
                 $email = $credentials["email"];
                 $info = \App\Models\Companyusers::where('email', $email)->first();
                 $id = $info['companyinfo_id']; 
-                $info = \App\Models\company_info::where('id', $id)->first();
-                // $info = \App\Models\company_info::find($id);
 
-                return view('companylook', compact('info'));
+                $info = \App\Models\company_info::where('id', $id)->first();
+                $view->with('info', $info);
+
+                $search_name = $info['name']; 
+                $info2 = \App\Models\company::where('companyname', '=',$search_name)
+                ->orderBy('id', 'desc')->get();
+                $view->with('info2', $info2);
+
+                return $view;
+
+                // return view('companylook', compact('info'));
 
             }
         }

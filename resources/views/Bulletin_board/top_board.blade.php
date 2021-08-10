@@ -21,7 +21,9 @@
             <div class="container mx-auto flex md:flex-row flex-col items-center bg-white p-10 rounded-lg border-4 border-double border-indigo-500 mb-5">
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 divide-y divide-light-blue-400"> 
                     <div class="rounded-lg bg-white text-2xl">
-                        <p class="midashi">Name</p>
+                    <p class="midashi">銭湯名</p>
+                        <p class="balloon2-top text-xl">{{ $item->companyname }}</p>
+                    <p class="midashi">Name</p>
                         <p class="balloon2-top text-xl">{{ $item->author }}</p>
                         <p class="midashi">Title</p>
                         <p class="balloon2-top text-xl">{{ $item->title }}</p>

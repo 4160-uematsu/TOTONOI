@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Company_info;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,8 +34,14 @@ class CompanyController2 extends Controller
             $entry->title = '';
             $entry->save();
 
+            // $view=view('companylook');
             $info = \App\Models\company_info::where('name', $entry->name)->first();
+            $view->with('info', $info);
 
+
+
+
+            // $info2 = \App\Models\company::where('companyname', $entry->name);
             // $info = \App\Models\company_info::find($entry->name);
 
             return view('companylook', compact('info'));
@@ -57,7 +64,9 @@ class CompanyController2 extends Controller
             $entry->photo = '';
             $entry->save();
             
-            $info = $entry;            
+
+            $info = $entry;    
+
             return view('companylook', compact('info'));
             // return view('companylook',[
             //     "info" => $input]);
