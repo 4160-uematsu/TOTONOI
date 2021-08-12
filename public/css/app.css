@@ -196092,3 +196092,7 @@ ul li {
   float: left;
 }
 }
+
+div.right {
+    text-align: right; 
+}

@@ -3,59 +3,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>companyform 表示</title>
-
-    <!-- Fonts -->
-
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .flex-center {
-            align-items: center;
-            margin: 100px 300px 100px 300px;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-    </style>
+    <title>表示</title>
 </head>
 <body>
-    <div class="flex-center position-ref">
-        <h1>銭湯会社の受け取り</h1>
-        <dl>
-            <dt></dt>
-            <dd></dd>
-        </dl>
-        <dl>
-            <dt>営業時間</dt>
-            <dd></dd>
-        </dl>
-        <dl>
-            <dt>宣伝</dt>
-            <dd></dd>
-        </dl>
-        <dl>
-            <dt>アドレス</dt>
-            <dd></dd>
-        </dl>
+    
 
+<a href="/log">みんなの掲示板</a></p>
+
+        <h1>銭湯会社ページ</pe-zi></h1>
         <dl>
-            <dt></dt>
             <dd>
- 
+            <dt>銭湯名</dt>
+            <li>{{ optional($info)->name }}</li>
             </dd>
         </dl>
-    </div>
-</body>
+        <dl>
+            <dd>
+                <dt>営業時間</dt>    
+                <li>{{ optional($info)->time }}</li>
+            </dd>
+        </dl>
+        <dl>
+            <dd>
+                <dt>宣伝</dt>
+                <li>{{ optional($info)->promotion }}</li>
+            </dd>
+        </dl>
+        <dl>
+            <dd>
+            <dt>住所</dt>
+            <li>{{ optional($info)-> address}}</li>
+            </dd>
+        </dl>   
+
+        @isset ($info2)
+
+            @foreach($info2 as $row)
+                銭湯名
+                <p >{{ $row->companyname }}</p>
+                <p >Name</p>
+                <p >{{ $row->author }}</p>
+                <p >Title</p>
+                <p >{{ $row->title }}</p>
+                <p >Comment</p>
+                <p > {{ $row->body }}</p>
+            @endforeach
+
+        @endisset
+
+    </body>
 </html>
+
 

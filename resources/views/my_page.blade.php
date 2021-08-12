@@ -5,6 +5,7 @@
 @if (Session::has('message'))
     <p class="text-center ">{{ session('message') }}</p>
 @endif
+
   <div class="mt-24 container mx-auto flex px-5 py-24 md:flex-row flex-col items-center bg-white border-4 border-double border-indigo-500">
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0"> 
         @if (Session::has('top_image_pass'))
@@ -22,7 +23,7 @@
           <font style="vertical-align: inherit;"></font>
           <br class="hidden lg:inline-block">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">TOTONOIマイページ</font>
+            <font style="vertical-align: inherit;" class="text-indigo-500 text-5xl">TOTONOIマイページ</font>
           </font>
       </h1>
       <p class="mb-8 ml-8 leading-relaxed text-aline">
@@ -45,19 +46,23 @@
     </div>
   </div>
   
-  <div class="mt-10 w-4/6 text mx-auto border-4 border-double border-indigo-500">
-    <h2 class="text-white font-semibold text-2xl bg-indigo-500 py-2 px-5 mx-auto flex md:flex-row flex-col">あなたの最新のコメント</h2>
+  <div class="mt-10 w-4/6 text mx-auto border-indigo-500">
+    <h2 class="text-white font-semibold text-2xl bg-indigo-500 py-2 px-5 mx-auto flex md:flex-row flex-col  rounded">あなたの最新のコメント</h2>
   </div> 
-  <div class="md:flex-row flex-col items-center mx-auto">
+  <div class="md:flex-row flex-col items-center mx-auto mb-10">
       <div class="container mx-auto flex md:flex-row flex-col items-center bg-white p-10 rounded-lg border-4 border-double border-indigo-500  ">
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 divide-y divide-light-blue-400"> 
           <div class="rounded-lg bg-white text-2xl">
            <p class="midashi">銭湯名</p>
-           <p class="balloon2-top text-xl">〇〇温泉</p
+           <p class="balloon2-top text-xl">温泉</p
             <p class="midashi">Title</p>
-            <p class="balloon2-top text-xl">{{ $my_history->title }}</p>
-            <p class="midashi">Comment</p>
-            <p class="balloon2-top text-xl">{{ $my_history->body }}</p>
+            @if ($my_history === null)
+                <p>最近のコメントなし</p>
+            @else 
+              <p class="balloon2-top text-xl">{{ $my_history->title }}</p>
+              <p class="midashi">Comment</p>
+              <p class="balloon2-top text-xl">{{ $my_history->body }}</p>
+            @endif
           </div>
         </div>
         <div class="lg:max-w-lg lg:w-full md:w-1/2 lg:pl-24 md:pl-16 flex-row-reverse md:items-start md:text-left">

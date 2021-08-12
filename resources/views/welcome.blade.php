@@ -28,8 +28,8 @@
                 <div class="mt-5 text-indigo-500">
                     <p >銭湯を営まれている方はこちら</p>
                     <div class="mt-5">
-                        <a href="/company_register" class="uppercase py-2 px-4 rounded-lg bg-indigo-500 border-2 border-transparent text-white text-md mr-4 hover:bg-indigo-400">ログイン</a>
-                        <a href="/company_login" class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-indigo-500 text-indigo-500 dark:text-white hover:bg-indigo-500 hover:text-white text-md">アカウント作成</a>
+                        <a href="/company_login" class="uppercase py-2 px-4 rounded-lg bg-indigo-500 border-2 border-transparent text-white text-md mr-4 hover:bg-indigo-400">ログイン</a>
+                        <a href="/company_register" class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-indigo-500 text-indigo-500 dark:text-white hover:bg-indigo-500 hover:text-white text-md">アカウント作成</a>
                     </div>
                 </div>
             </div>

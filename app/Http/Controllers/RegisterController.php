@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Laravel\Scout\Searchable;
 
 
-
 class RegisterController extends Controller
 {
     public function create()
@@ -20,7 +19,7 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->only('name', 'email', 'password');
+        $input = $request->only('company','name', 'email', 'password');
 
         $request->validate([
             'name' => 'required|string|max:255',
@@ -30,18 +29,15 @@ class RegisterController extends Controller
         ]);
 
         $company_user  = new Companyusers();
-        $company_user->name     = $input["name"];
-        $company_user->email    = $input["email"];
-        $company_user->password = $input["password"];
+        $company_user->companyinfo_id     = $input["company"];
+        $company_user->name               = $input["name"];
+        $company_user->email              = $input["email"];
+        $company_user->password           = $input["password"];
         
         $company_user->save();
 
 
         return view('company', compact('company_user'));
 
-        // $array_1=(array)$company_user;  
-        // $company_user->fill($array_1)->save();
-        // return view('regist.complete', compact('company_user'));
-        // use Illuminate\Support\Facades\Hash;
     }
 }

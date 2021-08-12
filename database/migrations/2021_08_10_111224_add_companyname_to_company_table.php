@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddGoogleIdColumn extends Migration
+class AddCompanynameToCompanyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddGoogleIdColumn extends Migration
      */
     public function up()
     {
-        Schema::table('users', function ($table) {
-            $table->string('google_id')->nullable();
+        Schema::table('company', function (Blueprint $table) {
+            //
+            $table->string('companyname');
         });
     }
 
@@ -25,8 +26,9 @@ class AddGoogleIdColumn extends Migration
      */
     public function down()
     {
-        //
-        $table->dropColumn('google_id');  //アクセスの削除
-
+        Schema::table('company', function (Blueprint $table) {
+            //
+            $table->dropColumn('companyname');  //カラムの削除
+        });
     }
 }
