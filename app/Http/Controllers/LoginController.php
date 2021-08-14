@@ -42,7 +42,6 @@ class LoginController extends Controller
 
                 return $view;
 
-                // return view('companylook', compact('info'));
 
             }
         }

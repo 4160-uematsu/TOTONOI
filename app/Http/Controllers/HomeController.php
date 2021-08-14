@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company_info;
-
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -33,8 +32,19 @@ class HomeController extends Controller
         //検索キーワードが空の場合
         if (empty($q)) {
             // $users = User::paginate(0);  //全ユーザーを10件/ページで表示
-            $users =  \App\Models\company_info::paginate(0);  //全ユーザーを10件/ページで表示
-
+            $users =  \App\Models\company_info::paginate(9);  //全ユーザーを10件/ページで表示
+            
+            // $users =  \App\Models\ompany_info::table('company_info')
+            // ->orderBy('id', 'desc')
+            // ->offset(5)
+            // ->limit(1)
+            // ->get();
+            // $user_history = DB::table('company')->orderBy('id','desc')->first();
+        
+        // $users = DB::table('users')
+        // ->orderBy('name')
+        // ->orderBy('old')
+        // ->get();
         //検索キーワードが入っている場合
         } else {
 
@@ -54,6 +64,8 @@ class HomeController extends Controller
                             ->orwhere('address', 'LIKE', '%'.$keyword.'%');
                 });
             }
+		$item_list = Company::orderBy('id', 'desc')->get();
+
             $users = $query->paginate(10); //検索結果のユーザーを10件/ページで表示
         }
         return view('home', compact('users', 'q'));
@@ -69,7 +81,6 @@ class HomeController extends Controller
         $info = \App\Models\Company_info::where('address', $search_name2)->first();
         $view->with('info', $info);
 
-        // $info2 = \App\Models\company::where('companyname', $search_name)->first();
         $info2 = \App\Models\company::where('companyname', '=',$search_name)
         ->orderBy('id', 'desc')->get();
         
@@ -79,7 +90,6 @@ class HomeController extends Controller
 
         //return view('companylook', ['info'=>$info,'info2'=>$info2 ]);
 
-            
     }
     
 }
