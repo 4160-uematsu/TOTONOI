@@ -50,17 +50,18 @@
     <h2 class="text-white font-semibold text-2xl bg-indigo-500 py-2 px-5 mx-auto flex md:flex-row flex-col  rounded">あなたの最新のコメント</h2>
   </div> 
   <div class="md:flex-row flex-col items-center mx-auto mb-10">
-      <div class="container mx-auto flex md:flex-row flex-col items-center bg-white p-10 rounded-lg border-4 border-double border-indigo-500  ">
+      <div class="container mx-auto flex md:flex-row flex-col items-center css-selector p-10 rounded-lg border-4 border-double border-indigo-500  ">
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 divide-y divide-light-blue-400"> 
-          <div class="rounded-lg bg-white text-2xl">
-           <p class="midashi">銭湯名</p>
-           <p class="balloon2-top text-xl">温泉</p
-            <p class="midashi">Title</p>
+          <div class="rounded-lg text-2xl">
+           <p class="midashi font-semibold">銭湯名</p>
+            <!-- 修正箇所 -->
+           <p class="balloon2-top text-xl">温泉</p>
+            <p class="midashi font-semibold">タイトル</p>
             @if ($my_history === null)
                 <p>最近のコメントなし</p>
             @else 
               <p class="balloon2-top text-xl">{{ $my_history->title }}</p>
-              <p class="midashi">Comment</p>
+              <p class="midashi font-semibold">コメント</p>
               <p class="balloon2-top text-xl">{{ $my_history->body }}</p>
             @endif
           </div>

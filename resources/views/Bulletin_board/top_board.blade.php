@@ -18,17 +18,17 @@
         <!-- <div class="entry"> -->
 
         <div class="md:flex-row flex-col items-ceter mx-auto">
-            <div class="container mx-auto flex md:flex-row flex-col items-center bg-white p-10 rounded-lg border-4 border-double border-indigo-500 mb-5">
+            <div class="container mx-auto flex md:flex-row flex-col items-center css-selector p-10 rounded-lg border-4 border-double border-indigo-500 mb-5">
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 divide-y divide-light-blue-400"> 
-                    <div class="rounded-lg bg-white text-2xl">
-                    <p class="midashi">銭湯名</p>
-                        <p class="balloon2-top text-xl">{{ $item->companyname }}</p>
-                    <p class="midashi">Name</p>
-                        <p class="balloon2-top text-xl">{{ $item->author }}</p>
-                        <p class="midashi">Title</p>
-                        <p class="balloon2-top text-xl">{{ $item->title }}</p>
-                        <p class="midashi">Comment</p>
-                        <p class="balloon2-top text-xl"> {!! nl2br(e($item->body)) !!}</p>
+                    <div class="rounded-lg text-2xl">
+                    <p class="midashi font-semibold">銭湯名</p>
+                        <p class="balloon2-top text-xl px-5">{{ $item->companyname }}</p>
+                    <p class="midashi font-semibold">名前</p>
+                        <p class="balloon2-top text-xl px-5">{{ $item->author }}</p>
+                        <p class="midashi font-semibold">タイトル</p>
+                        <p class="balloon2-top text-xl px-5">{{ $item->title }}</p>
+                        <p class="midashi font-semibold">コメント</p>
+                        <p class="balloon2-top text-xl px-5"> {!! nl2br(e($item->body)) !!}</p>
                     </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 lg:pl-24 md:pl-16 flex-row-reverse md:items-start md:text-left">
