@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="hidden sm:block sm:w-1/3 lg:w-3/5 relative pt-10">
-                <img src="{{ asset('/storage/LP/LPpng.jpg') }}" class="transform scale-150 max-w-xs md:max-w-sm m-auto"/>
+                <img src="{{ asset('/def_img/LPpng.jpg') }}" class="transform scale-150 max-w-xs md:max-w-sm m-auto"/>
             </div>
         </div>
     </div>
