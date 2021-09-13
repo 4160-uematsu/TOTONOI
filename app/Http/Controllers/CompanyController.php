@@ -11,7 +11,7 @@ class CompanyController extends Controller
 		//@TODO 投稿一覧画面を表示
 
         // $item_list = Company::all();
-		$item_list = Company::orderBy('id', 'desc')->get();
+		$item_list = company::orderBy('id', 'desc')->get();
 		// $item_list = Company::orderBy('id', 'desc')->paginate(15);
         return view("/Bulletin_board/top_board", [
 			"item_list" => $item_list
@@ -26,7 +26,7 @@ class CompanyController extends Controller
             $path = $request->file('image')->store('public/company');
             $path2 = basename($path); 
             
-            $entry = new Company();
+            $entry = new company();
             $entry->author_id = $id;
             $entry->companyname = $input["companyname"];
             $entry->author = $input["author"];
@@ -39,7 +39,7 @@ class CompanyController extends Controller
                 "image"  => basename($path)]);
         }
         else{
-            $entry = new Company();
+            $entry = new company();
             $entry->author_id = $id;
             $entry->companyname = $input["companyname"];
             $entry->author = $input["author"];
