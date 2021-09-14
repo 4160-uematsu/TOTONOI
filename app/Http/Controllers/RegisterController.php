@@ -23,12 +23,12 @@ class RegisterController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:Companyusers',
+            'email' => 'required|string|email|max:255|unique:companyusers',
             'password' => 'required|string|confirmed|min:5',
 
         ]);
 
-        $company_user  = new Companyusers();
+        $company_user  = new companyusers();
         $company_user->companyinfo_id     = $input["company"];
         $company_user->name               = $input["name"];
         $company_user->email              = $input["email"];

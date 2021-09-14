@@ -20,6 +20,7 @@ class Companyusers extends Model
         'name',
         'email',
         'password',
+        
     ];
 
     /**

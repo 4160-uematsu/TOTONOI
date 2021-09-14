@@ -13,7 +13,7 @@ class AddCompanyToCompanyusersTable extends Migration
      */
     public function up()
     {
-        Schema::table('Companyusers', function (Blueprint $table) {
+        Schema::table('companyusers', function (Blueprint $table) {
             //
         $table->foreignId('companyinfo_id')->nullable();
         // $table->integer('companyinfo_id')->unsigned()->nullabale();//会社IDの追加   
@@ -30,10 +30,10 @@ class AddCompanyToCompanyusersTable extends Migration
      */
     public function down()
     {
-        Schema::table('Companyusers', function (Blueprint $table) {
+        Schema::table('companyusers', function (Blueprint $table) {
             //
         // $table->dropForeign('companyinfo'); //会社IDの削除
-        Schema::dropIfExists('Companyusers_companyinfo_id_foreign');
+        Schema::dropIfExists('companyusers_companyinfo_id_foreign');
 
         });
     }

@@ -13,7 +13,7 @@ class CreateCompanyusersTable extends Migration
      */
     public function up()
     {
-        Schema::create('Companyusers', function (Blueprint $table) {
+        Schema::create('companyusers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -31,6 +31,6 @@ class CreateCompanyusersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Companyusers');
+        Schema::dropIfExists('companyusers');
     }
 }

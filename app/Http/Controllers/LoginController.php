@@ -23,8 +23,8 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email','password');
         
-        if (Companyusers::where('email', '=',  $credentials["email"] )->exists()) {
-            if (Companyusers::where('password', '=',  $credentials["password"] )->exists()) {
+        if (companyusers::where('email', '=',  $credentials["email"] )->exists()) {
+            if (companyusers::where('password', '=',  $credentials["password"] )->exists()) {
                 
                 $view=view('companylook');
                 
