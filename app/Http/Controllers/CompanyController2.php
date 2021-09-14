@@ -56,7 +56,7 @@ class CompanyController2 extends Controller
             $info =$entry;
             $view->with('info', $info);
 
-            $info2 = \App\Models\company::where('companyname', $entry->name)->first();
+            $info2 = \App\Models\Company::where('companyname', $entry->name)->first();
             $view->with('info2', $info2);
 
             return $view;
