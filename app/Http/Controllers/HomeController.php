@@ -32,7 +32,7 @@ class HomeController extends Controller
         //検索キーワードが空の場合
         if (empty($q)) {
             // $users = User::paginate(0);  //全ユーザーを10件/ページで表示
-            $users =  \App\Models\company_info::paginate(9);  //全ユーザーを10件/ページで表示
+            $users =  \App\Models\Company_info::paginate(9);  //全ユーザーを10件/ページで表示
             
             // $users =  \App\Models\ompany_info::table('company_info')
             // ->orderBy('id', 'desc')
@@ -55,7 +55,7 @@ class HomeController extends Controller
             $keywords = array_unique(explode(' ', $_q)); //キーワードを半角スペースで配列に変換し、重複する値を削除
 
             // $query = User::query();
-            $query = \App\Models\company_info ::query();
+            $query = \App\Models\Company_info ::query();
             foreach($keywords as $keyword) {
                 //1つのキーワードに対し、名前か住所のいずれかが一致しているユーザを抽出
                 //キーワードが複数ある場合はAND検索
@@ -64,7 +64,7 @@ class HomeController extends Controller
                             ->orwhere('address', 'LIKE', '%'.$keyword.'%');
                 });
             }
-		$item_list = Company::orderBy('id', 'desc')->get();
+		$item_list = company::orderBy('id', 'desc')->get();
 
             $users = $query->paginate(10); //検索結果のユーザーを10件/ページで表示
         }

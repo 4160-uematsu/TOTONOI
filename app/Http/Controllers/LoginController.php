@@ -8,7 +8,6 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Companyusers;
-// use App\Models\Company_info;
 use App\Models\Companyinfo;
 
 class LoginController extends Controller
@@ -32,11 +31,11 @@ class LoginController extends Controller
                 $info = \App\Models\Companyusers::where('email', $email)->first();
                 $id = $info['companyinfo_id']; 
 
-                $info = \App\Models\company_info::where('id', $id)->first();
+                $info = \App\Models\Company_info::where('id', $id)->first();
                 $view->with('info', $info);
 
                 $search_name = $info['name']; 
-                $info2 = \App\Models\company::where('companyname', '=',$search_name)
+                $info2 = \App\Models\Company::where('companyname', '=',$search_name)
                 ->orderBy('id', 'desc')->get();
                 $view->with('info2', $info2);
 
