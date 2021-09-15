@@ -19,7 +19,7 @@ class CompanyController2 extends Controller
         $input = $request->only('name', 'time', 'promotion','photo','address','riyu1','riyu2','riyu3');
             $view=view('companylook');
             
-            $entry = new Company_info();
+            $entry = new company_info();
             $entry->name = $input["name"];
             $entry->time = $input["time"];
             $entry->promotion = $input["promotion"];
