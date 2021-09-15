@@ -1,9 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
+
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+
 
 class CompanyController extends Controller
 {
@@ -25,10 +28,12 @@ class CompanyController extends Controller
         if($request->hasFile('image')) {
             $path = $request->file('image')->store('public/company');
             $path2 = basename($path); 
-            echo $id;
-            exit;
+            $author = $request->author;
+            $id2 = \App\Models\User::where('name', $author)->first();
+            $id2 = $id2['id'];
+
             $entry = new company();
-            $entry->author_id = $id;
+            $entry->author_id = $id2;
             $entry->companyname = $input["companyname"];
             $entry->author = $input["author"];
             $entry->title = $input["title"];
@@ -41,7 +46,7 @@ class CompanyController extends Controller
         }
         else{
             $entry = new company();
-            $entry->author_id = $id;
+            $entry->author_id = $id2;
             $entry->companyname = $input["companyname"];
             $entry->author = $input["author"];
             $entry->title = $input["title"];
