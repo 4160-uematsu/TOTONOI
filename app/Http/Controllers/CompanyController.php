@@ -25,7 +25,8 @@ class CompanyController extends Controller
         if($request->hasFile('image')) {
             $path = $request->file('image')->store('public/company');
             $path2 = basename($path); 
-            
+            echo $id;
+            exit;
             $entry = new company();
             $entry->author_id = $id;
             $entry->companyname = $input["companyname"];
