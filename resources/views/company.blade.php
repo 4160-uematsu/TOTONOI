@@ -5,13 +5,13 @@
     <div class="mx-auto text-2xl font-bold bg-indigo-500 w-1/2 text-white text-center rounded p-3">
     銭湯情報の入力フォーム
     </div>
-    <form action="/company_info" method="POST" >
+    <form action="/company_info" method="POST" enctype="multipart/form-data">
     @csrf
     <ul class="text-center mx-auto">
         <li class="text-xl font-semibold mt-7 text-gray-600">
             <label for="photo">ホーム画像</label>
             <div class="text-white bg-indigo-300 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg originalbtn">
-                ファイルを選択<input type="file" id="avatar" name="photo" accept="image/png, image/jpeg">
+                ファイルを選択<input type="file" id="avatar" name="photo" >
             </div>
         </li>
         <li class="text-xl font-semibold mt-3 text-gray-600">
