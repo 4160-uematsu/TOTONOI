@@ -81,7 +81,7 @@ class HomeController extends Controller
         $info = \App\Models\Company_info::where('address', $search_name2)->first();
         $view->with('info', $info);
 
-        $info2 = \App\Models\company::where('companyname', '=',$search_name)
+        $info2 = \App\Models\Company::where('companyname', '=',$search_name)
         ->orderBy('id', 'desc')->get();
         
         $view->with('info2', $info2);
