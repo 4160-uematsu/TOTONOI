@@ -139,22 +139,22 @@
                 @if ( $info->riyu3 === '3')
                 <li>電気風呂あり</li>
                 @endif   
-        </dl>
+        </dl><br>
         
         <dl class="text-xl font-semibold">
             <dd>   
-                <dt class="midashi">最近のコメント</dt>
+                <dt class="midashi">最近のコメント</dt><br>
                 @isset ($info2)
 
                     @foreach($info2 as $row)
-                        銭湯名
-                        <p >{{ $row->companyname }}</p>
-                        <p >Name</p>
+                        <!-- 銭湯名 -->
+                        <!-- <p >{{ $row->companyname }}</p> -->
+                        <p ><li>名前</li></p>
                         <p >{{ $row->author }}</p>
-                        <p >Title</p>
+                        <p ><li>タイトル</li></p>
                         <p >{{ $row->title }}</p>
-                        <p >Comment</p>
-                        <p > {{ $row->body }}</p>
+                        <p ><li>コメント</li></p>
+                        <p > {{ $row->body }}</p><br>
                     @endforeach
 
                 @endisset
