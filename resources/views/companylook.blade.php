@@ -140,21 +140,22 @@
                 <li>電気風呂あり</li>
                 @endif   
         </dl>
+        
+        <dt class="midashi">最近のコメント</dt>
+                @isset ($info2)
 
-        @isset ($info2)
+                    @foreach($info2 as $row)
+                        銭湯名
+                        <p >{{ $row->companyname }}</p>
+                        <p >Name</p>
+                        <p >{{ $row->author }}</p>
+                        <p >Title</p>
+                        <p >{{ $row->title }}</p>
+                        <p >Comment</p>
+                        <p > {{ $row->body }}</p>
+                    @endforeach
 
-            @foreach($info2 as $row)
-                銭湯名
-                <p >{{ $row->companyname }}</p>
-                <p >Name</p>
-                <p >{{ $row->author }}</p>
-                <p >Title</p>
-                <p >{{ $row->title }}</p>
-                <p >Comment</p>
-                <p > {{ $row->body }}</p>
-            @endforeach
-
-        @endisset
+                @endisset
     </div>
 </div>
 </section>
