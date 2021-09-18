@@ -99,10 +99,10 @@
     @endisset
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-        <dl>
+        <dl class="text-xl font-semibold">
             <dd>
-            <dt  class="text-2xl font-semibold midashi">銭湯名</dt>
-            <li>{{ optional($info)->name }}</li>
+                <dt class="midashi">銭湯名</dt>
+                <li>{{ optional($info)->name }}</li>
             </dd>
         </dl>
         <dl class="text-xl font-semibold">
