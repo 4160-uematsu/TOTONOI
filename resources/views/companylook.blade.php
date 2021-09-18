@@ -141,7 +141,9 @@
                 @endif   
         </dl>
         
-        <dt class="midashi">最近のコメント</dt>
+        <dl class="text-xl font-semibold">
+            <dd>   
+                <dt class="midashi">最近のコメント</dt>
                 @isset ($info2)
 
                     @foreach($info2 as $row)
@@ -156,6 +158,7 @@
                     @endforeach
 
                 @endisset
+        </dl>    
     </div>
 </div>
 </section>
